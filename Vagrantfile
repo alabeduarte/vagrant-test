@@ -6,6 +6,7 @@ VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "Ubuntu precise 64 VirtualBox"
   config.vm.box_url = "http://files.vagrantup.com/precise64.box"
+  config.vm.network :forwarded_port, host: 3000, guest: 3000
 
   config.omnibus.chef_version = :latest
 
